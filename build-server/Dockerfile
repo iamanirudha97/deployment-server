@@ -1,13 +1,9 @@
-FROM ubuntu:focal
+FROM ubuntu
 
-RUN apt-get update
-RUN apt-get install -y curl 
-RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
-RUN apt-get upgrade -y
-RUN nvm install 22
-RUN node -v 
-RUN npm -v
-
+RUN apt update -y
+RUN apt install nodejs -y
+RUN node -v
+RUN apt install npm -y
 RUN apt-get install git -y
 
 WORKDIR /home/app
